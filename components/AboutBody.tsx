@@ -1,13 +1,13 @@
 export default function AboutBody(): JSX.Element {
     return (
         <div className="font-bold text-white">
-            <div className="border-white border mt-5">
+            <div className="mt-5">
                 <h1 className=" mt-5 text-center text-2xl hover:text-orange-600">
                     Who Are We?
                 </h1>
                 <p className="mt-1 ml-5 hover:text-orange-600 text-center">The Cyber Orioles is a highschool robotics team located in Morrice, Michigan</p>
             </div>
-            <div className="border-white border mt-5">
+            <div className="mt-5">
                 <div>
                     <h1 className=" mt-5 text-center text-2xl hover:text-orange-600">
                         What Do We Do?
