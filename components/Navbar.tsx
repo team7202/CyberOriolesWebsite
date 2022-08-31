@@ -4,7 +4,7 @@ import {
 } from "@heroicons/react/solid";
 import HomeBody from "./HomeBody";
 
-export default function (): JSX.Element {
+export default function Navbar(): JSX.Element {
     return (
         <div className="flex">
             <div className="w-10 border border-gray-700 bg-black h-screen">
