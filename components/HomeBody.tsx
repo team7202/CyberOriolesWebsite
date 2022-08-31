@@ -3,7 +3,7 @@ import {
     ClipboardListIcon
 } from "@heroicons/react/solid";
 
-export default function () {
+export default function (): JSX.Element {
     return (
         <div>
             <div className="h-24"></div>
