@@ -5,14 +5,14 @@ import HomeBody from '../components/HomeBody'
 import Navbar from '../components/Navbar'
 import styles from '../styles/Home.module.css'
 
-const Home: NextPage = () => {
-  const result = Navbar(HomeBody());
+const News: NextPage = () => {
+  const result = Navbar(null);
   return (
     <div className='h-screen bg-black'>
-      <Head><title>Home</title></Head>
+      <Head><title>News</title></Head>
       {result}
     </div>
   )
 }
 
-export default Home
+export default News

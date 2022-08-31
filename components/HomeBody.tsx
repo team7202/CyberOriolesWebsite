@@ -1,15 +1,13 @@
-import {
-    HomeIcon,
-    ClipboardListIcon
-} from "@heroicons/react/solid";
-
 export default function HomeBody(): JSX.Element {
     return (
         <div>
-            <div className="h-24"></div>
-            <h1 className="text-xl ml-10">
-                <span className="text-white hover:text-orange-700">
-                    Hello, Welcome to our Website!
+            <h1 className="text-white ml-10 mt-10">
+                <span className="hover:text-orange-600">
+                    Hello, Welcome to the Cyber Orioles Official Website!
+                </span>
+                <div className="mt-5"/>
+                <span className="hover:text-orange-600">
+                    This website is where you will be able to get more information on our Robotics Team
                 </span>
             </h1>
         </div>

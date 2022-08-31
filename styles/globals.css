@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-.mid-nav {
-  width: 500%;
+.nav-side {
+  width: 3%;
+}
+
+.page-content {
+  font-size: 100%;
+}
+
+.content-box {
+  width: 50%;
+  text-align: center;
+  justify-content: center;
 }

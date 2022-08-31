@@ -6,10 +6,10 @@ import Navbar from '../components/Navbar'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
-  const result = Navbar(HomeBody());
+  const result = Navbar(null);
   return (
     <div className='h-screen bg-black'>
-      <Head><title>Home</title></Head>
+      <Head><title>Media</title></Head>
       {result}
     </div>
   )
