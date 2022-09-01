@@ -11,8 +11,8 @@ export default function Navbar(body: JSX.Element | null): JSX.Element {
     return (
         <div className="flex">
             <Sidebar />
-            <div className="h-10 w-full border border-gray-700 justify-center">
-                <div className="hover:bg-gray-900">
+            <div className="h-10 w-full border-2 border-black bg-gray-700 justify-center rounded-xl">
+                <div className="">
                     <h1 className="text-center text-2xl">
                         <Link href="/" className="rounded-md hover:bg-gray-900 font-bold">
                             <span>

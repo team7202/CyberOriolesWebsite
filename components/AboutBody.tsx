@@ -2,7 +2,7 @@ import { PhoneIcon } from "@heroicons/react/solid";
 
 export default function AboutBody(): JSX.Element {
     return (
-        <div className="font-bold text-white content-box border-white border hover:bg-gray-900">
+        <div className="font-bold text-white content-box border-white border hover:bg-black rounded-xl">
             <div>
                 <h1 className=" text-center text-2xl hover:text-orange-600">
                     Who Are We?

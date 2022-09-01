@@ -1,6 +1,6 @@
 export default function HomeBody(): JSX.Element {
     return (
-        <div>
+        <div className="">
             <h1 className="text-white ml-10 mt-10">
                 <span className="hover:text-orange-600">
                     Hello, Welcome to the Cyber Orioles Official Website!
