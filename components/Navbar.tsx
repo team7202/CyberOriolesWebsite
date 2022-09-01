@@ -1,9 +1,3 @@
-import {
-    HomeIcon,
-    ClipboardListIcon,
-    QuestionMarkCircleIcon,
-    VideoCameraIcon
-} from "@heroicons/react/solid";
 import Link from "next/link";
 import AboutBody from "./AboutBody";
 import HomeBody from "./HomeBody";
@@ -18,18 +12,20 @@ export default function Navbar(body: JSX.Element | null): JSX.Element {
         <div className="flex">
             <Sidebar />
             <div className="h-10 w-full border border-gray-700 justify-center">
-                <h1 className="text-center text-2xl">
-                    <Link href="/" className="rounded-md hover:bg-gray-900 font-bold">
-                        <div>
-                            <span className="text-white hover:text-orange-600 cursor-pointer">
-                                Cyber
+                <div className="hover:bg-gray-900">
+                    <h1 className="text-center text-2xl">
+                        <Link href="/" className="rounded-md hover:bg-gray-900 font-bold">
+                            <span>
+                                <span className="text-white hover:text-orange-600 cursor-pointer">
+                                    Cyber
+                                </span>
+                                <span className="text-orange-600 hover:text-white cursor-pointer">
+                                    Orioles
+                                </span>
                             </span>
-                            <span className="text-orange-600 hover:text-white cursor-pointer">
-                                Orioles
-                            </span>
-                        </div>
-                    </Link>
-                </h1>
+                        </Link>
+                    </h1>
+                </div>
                 {body}
             </div>
         </div>
