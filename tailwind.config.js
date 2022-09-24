@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  lightMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -8,9 +9,6 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require('tailwind-scrollbar')
+    require('tailwind-scrollbar')({ nocompatible: true })
   ],
-  variants: {
-    scrollbar: ['rounded']
-  }
 }
