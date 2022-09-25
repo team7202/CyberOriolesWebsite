@@ -1,22 +1,14 @@
+import mongoose, { CallbackWithoutResult } from "mongoose";
 import { NextApiRequest, NextApiResponse } from "next";
-// const { groq } = require('next-sanity');
-import { SanityClient } from "@sanity/client";
-import client from "../../client";
-
-// const feedQuery = groq`
-// *[_type == "news"] {
-//     _id,
-//     ...
-//   } | order(_createdAt desc)
-// `
+import NewsModel from "../../model/NewsModel";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const paths = await client.fetch(
-    `*[_type == "news"] {
-      _id,
-      ...
-    } | order(_createdAt desc)`
-  )
-  res.status(200).send(paths.map((news: any) => ({ news }))
-  );
+
+  connect(async () => {
+    res.status(200).send(await NewsModel.find().sort({createdAt: -1}));
+  })
+}
+
+const connect = (callback: CallbackWithoutResult) => {
+  mongoose.connect(process.env.MONGO_URI!, callback);
 }
