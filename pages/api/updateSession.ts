@@ -5,6 +5,9 @@ import { generateRandomToken } from "../../script/generateRandomToken";
 
 export default async function Handler(req: NextApiRequest, res: NextApiResponse) {
 
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Headers", "*");
+
     if (req.query == undefined || req.query.pass != "cyber") {
         res.status(500).send({ error: "An error has occured" });
         return;
