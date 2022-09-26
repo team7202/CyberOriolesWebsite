@@ -1,5 +1,5 @@
 export const getNews = async () => {
-    const res = await fetch(`https://cyberorioles.com/api/getNews`);
+    const res = await fetch(`${process.env.VERCEL_URL}/api/getNews`);
     const data = await res.json();
     return data;
 }
