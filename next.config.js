@@ -7,7 +7,7 @@ const nextConfig = {
       {
         source: "/_next/:path*",
         headers: [
-          { key: "Access-Control-Allow-Origin", value: "https://www.cyberorioles.com" },
+          { key: "Access-Control-Allow-Origin", value: "*" },
         ],
       },
     ]
