@@ -2,11 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { AiFillCloseCircle } from "react-icons/ai";
 import NewsModel from "../model/NewsModel";
-import { createNews } from "../script/createNews";
-import { deleteNews } from "../script/deleteNews";
-import { generateRandomToken } from "../script/generateRandomToken";
-import { getSession } from "../script/getSession";
-import { updateSession } from "../script/updateSession";
 
 const Modal = ({ show, onClose, children }: { show: boolean, onClose: any, children: any }) => {
 
@@ -30,14 +25,6 @@ const Modal = ({ show, onClose, children }: { show: boolean, onClose: any, child
         }
 
         document.getElementById("id")!.style.color = "white";
-
-        await updateSession();
-
-        
-
-        getSession().then(async (res) => {
-            await deleteNews(id, res.token);
-        });
     }
 
     const handleChange = () => {

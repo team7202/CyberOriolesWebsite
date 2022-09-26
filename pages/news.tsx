@@ -1,7 +1,6 @@
 import { GetServerSideProps } from "next";
 import { useEffect, useState } from "react";
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
-import { getNews } from "../script/getNews";
 import cookie from 'js-cookie';
 import TimeAgo from "react-timeago";
 import NewsSettingsAdd from "../components/NewsSettingsAdd";
@@ -82,7 +81,7 @@ const News = ({ news }: { news: any }) => {
 }
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
-    const news = await getNews();
+    const news = await fetch("https://cyberorioles.com/api/getNews");
     return {
         props: { news }, // will be passed to the page component as props
     }
