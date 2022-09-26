@@ -3,12 +3,16 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { useContext } from "react";
 import NewsModel from "../../model/NewsModel";
 import { getSession } from "../../script/getSession";
+const NextCors = require('nextjs-cors');
 
 export default async function Handler(req: NextApiRequest, res: NextApiResponse) {
 
-    // const { token, setToken } = useContext(Context);
-
-    // console.log(token);
+    await NextCors(req, res, {
+        // Options
+        methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+        origin: '*',
+        optionsSuccessStatus: 200,
+     });
 
     if (req.query == undefined || req.query.title == undefined || req.query.description == undefined || req.query.token == undefined) {
         res.status(500).send({ error: "An error has occured" });
