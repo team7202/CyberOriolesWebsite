@@ -35,12 +35,12 @@ const News = ({ news }: { news: any }) => {
         contentList.push(
             <details className='mt-[1vh]' key={e.toString()}>
                 <summary className='text-[3vh] w-fit text-white duration-500 hover:duration-500 hover:text-orange-600'>
-                    <span className="">{e.title}</span>
-                    <span className="text-white"> - <TimeAgo date={e.createdAt} className="text-gray-200" /></span>
-                    {cookie.get("session") == match ? <span className="absolute left-0 translate-x-[64vw] text-white">{e._id}</span> : ''}
+                    <span className="">{e.news.title}</span>
+                    <span className="text-white"> - <TimeAgo date={e.news.createdAt} className="text-gray-200" /></span>
+                    {cookie.get("session") == match ? <span className="absolute left-0 translate-x-[64vw] text-white">{e.news._id}</span> : ''}
                 </summary>
                 <div className='pt-[0.5vh] pb-[0.5vh] pr-[0.5vw] pl-[0.5vw] rounded-md cursor text-[3vh] text-neutral-500'>
-                    {e.description}
+                    {e.news.description}
                 </div>
             </details>
         )
