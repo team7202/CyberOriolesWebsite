@@ -4,7 +4,7 @@ import NewsModel from "../../model/NewsModel";
 import news from "../../json/news.json";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  connect(async => () => {
+  connect(async () => {
     res.status(200).send(await NewsModel.find({}).sort({createdAt: -1}));
   });
 }
