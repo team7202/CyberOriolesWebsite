@@ -40,7 +40,7 @@ const News = ({ news }: { news: any }) => {
     }, [contentList]);
 
     return (
-        <div className=' ml-[10vw] mt-[7vh] bg-stone-800 duration-[2000ms] hover:bg-[#111111] hover:duration-1000 w-[75vw] h-[75vh] rounded-md'>
+        <div className='ml-[10vw] mt-[7vh] bg-stone-800 duration-[2000ms] hover:bg-[#111111] hover:duration-1000 w-[75vw] h-[75vh] rounded-md hover:animate-[float_1s_ease-in-out_infinite]'>
             <div className="border-b flex justify-center rounded-md">
                 <h1 className="text-center text-[5vh] text-white border-b border-b-stone-700">News</h1>
             </div>
