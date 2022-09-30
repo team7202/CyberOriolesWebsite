@@ -1,7 +1,8 @@
 import type { NextPage } from 'next'
+import Constants from '../scripts/Constants'
 
 const Home: NextPage = (props) => {
-
+  
   return (
     <div className='mt-[5vh]'>
       <h1 className='text-stone-200 hover:text-amber-500 hover:cursor-default text-2xl font-bold text-center select-none'>Welcome to the <span className='hover:text-amber-700'>7202 CyberOrioles</span> Website!</h1>
