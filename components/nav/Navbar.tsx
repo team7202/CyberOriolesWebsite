@@ -18,19 +18,10 @@ export default function Navbar() {
     return (
         <div>
             <div className="select-none">
-                {/* <div className="w-[95vw] h-[7vh] mt-[3vh] rounded-lg bg-orange-600 ml-[2.5vw] fixed border-black border-2 text-[2.6vh]">
-                <div className="mt-[0.5vh] mb-[0.5vh]">
-                    <button className="ml-[2vw] font-[poppins] text-white rounded-md px-[0.5vw] py-[0.5vh] hover:bg-[rgba(41,37,36,0.6)] border-2 border-transparent hover:border-[rgba(50,50,50,0.5)]" onClick={(e) => location.href = "/"}>Home</button>
-                    <button className="ml-[4vw] font-[poppins] text-white rounded-md px-[0.5vw] py-[0.5vh] hover:bg-[rgba(41,37,36,0.6)] border-2 border-transparent hover:border-[rgba(50,50,50,0.5)]" onClick={(e) => location.href = "/news"}>News</button>
-                    <button className="ml-[4vw] font-[poppins] text-white rounded-md px-[0.5vw] py-[0.5vh] hover:bg-[rgba(41,37,36,0.6)] border-2 border-transparent hover:border-[rgba(50,50,50,0.5)]" onClick={(e) => location.href = "/media"}>Media</button>
-                    <button className="ml-[4vw] font-[poppins] text-white rounded-md px-[0.5vw] py-[0.5vh] hover:bg-[rgba(41,37,36,0.6)] border-2 border-transparent hover:border-[rgba(50,50,50,0.5)]" onClick={(e) => location.href = "/sponsors"}>Sponsors</button>
-                    <button className="ml-[4vw] font-[poppins] text-white rounded-md px-[0.5vw] py-[0.5vh] hover:bg-[rgba(41,37,36,0.6)] border-2 border-transparent hover:border-[rgba(50,50,50,0.5)]" onClick={(e) => location.href = "/contact"}>Contact</button>
-                </div>
-            </div> */}
-                <div className="md:hidden lg:hidden duration-1000 hover:duration-1000 w-[95vw] h-[5vh] mt-[1vh] rounded-md bg-gradient-to-r from-orange-400 to-amber-400 hover:bg-gradient-to-r hover:from-orange-500 hover:to-amber-500 ml-[2.5vw] fixed border-black border-2 text-[2.6vh]">
+                <div className="md:hidden lg:hidden duration-1000 hover:duration-1000 w-[95vw] h-[5vh] mt-[1vh] rounded-md bg-gradient-to-r from-orange-500 to-amber-400 hover:bg-gradient-to-r hover:from-orange-600 hover:to-amber-500 ml-[2.5vw] fixed border-black border-2 text-[2.6vh]">
                     <GiHamburgerMenu className={`mt-[1vh] ml-[85vw] duration-1000 hover:duration-1000 hover:cursor-pointer ${mobileNavToggle ? "text-white" : "text-black"}`} onClick={(e) => toggleMobileNav(!mobileNavToggle)} />
                 </div>
-                <div className="sm:hidden duration-1000 hover:duration-1000 w-[95vw] h-[5vh] mt-[1vh] rounded-lg bg-gradient-to-r from-orange-400 to-amber-400 hover:bg-gradient-to-r hover:from-orange-500 hover:to-amber-500 ml-[2.5vw] fixed border-black border-2 text-[3vh]">
+                <div className="sm:hidden duration-1000 hover:duration-1000 w-[95vw] h-[5vh] mt-[1vh] rounded-lg bg-gradient-to-r from-orange-500 to-amber-400 hover:bg-gradient-to-r hover:from-orange-600 hover:to-amber-500 ml-[2.5vw] fixed border-black border-2 text-[3vh]">
                     <span className={`ml-[5vw] ${currentPage == "" ? "text-black font-[900]" : "text-stone-800 font-[600]"} hover:bg-amber-600 pl-[1vw] pr-[1vw] rounded-md hover:cursor-pointer`} onClick={(e) => currentPage == "" ? "" : location.href = "/"}>Home</span>
                     <span className={`ml-[5vw] ${currentPage == "news" ? "text-black font-[900]" : "text-stone-800 font-[600] hover:bg-amber-600"} pl-[1vw] pr-[1vw] rounded-md hover:cursor-pointer`} onClick={(e) => currentPage == "news" ? "" : location.href = "/news"}>News</span>
                     <span className={`ml-[5vw] ${currentPage == "media" ? "text-black font-[900]" : "text-stone-800 font-[600] hover:bg-amber-600"} pl-[1vw] pr-[1vw] rounded-md hover:cursor-pointer`} onClick={(e) => currentPage == "media" ? "" : location.href = "/media"}>Media</span>
