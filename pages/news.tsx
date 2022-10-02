@@ -55,7 +55,7 @@ const News = (props: any) => {
 }
 
 export const getServerSideProps: GetServerSideProps = async (context: any) => {
-    const news = await getNews(Constants.SERVER.URL);
+    const news = await getNews();
     return {
         props: { news }, // will be passed to the page component as props
     }

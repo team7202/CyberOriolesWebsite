@@ -1,26 +1,49 @@
 import type { GetServerSideProps, NextPage } from 'next'
 import { useState } from 'react';
+import ReactDOM from 'react-dom';
 import { GrFacebookOption, GrGithub } from "react-icons/gr";
 import { TBAIcon } from '../components/images/Icons';
+import ImageFullscreen from '../components/media/ImageFullscreen';
 import { getImages } from '../scripts/getImages';
 
 let images: any[] = [];
 
 const Media: NextPage = (props: any) => {
 
-
     const [socialDropdown, setSocialDropdown] = useState(false);
     const [videoDropdown, setVideoDropdown] = useState(false);
     const [imageDropdown, setImageDropdown] = useState(false);
+    const [imageFull, setImageFull] = useState(false);
 
+    const [fullImageURL, setFullImageURL] = useState("");
+
+    if (typeof window !== 'undefined') {
+        document.addEventListener("keyup", (event) => {
+            if (imageFull && event.key == "Escape") setImageFull(false);
+        })
+    }
+
+    const handleImageClick = (url: string) => {
+        setFullImageURL(url);
+        setImageFull(true);
+    }
 
     getImages().then((res) => {
-        images = res;
-    })
+        for (let i = 0; i < res.length; i++) {
+            images = [];
+            images.push(res.map((val: any) => <div key={i} className='duration-1000 hover:duration-1000 float-left pl-[0.5vw] pt-[0.5vw] pr-[0.5vw] pb-[0.5vw] ml-[0.5vw] mt-[0.5vw] rounded-lg bg-stone-900 hover:bg-black' onClick={(e) => handleImageClick(`/images/${val}`)}><img src={`/images/${val}`} className={`w-[10vw] h-[10vw]`} /></div>))
+        }
+    });
+
 
     return (
-        <div className='text-stone-300'>
-            <div className='sm:hidden select-none'>
+        <div className='text-stone-300 select-none'>
+            <ImageFullscreen
+                onClose={() => setImageFull(false)}
+                show={imageFull}
+                url={fullImageURL}
+            />
+            <div className='sm:hidden'>
                 <div className='text-center'>
                     <h1 className='w-fit inline-block text-2xl hover:cursor-pointer' onClick={(e) => setSocialDropdown(!socialDropdown)}>Social Links {socialDropdown ? '⏵' : '⏷'}</h1>
                 </div>
@@ -42,7 +65,6 @@ const Media: NextPage = (props: any) => {
                     }
                 </div>
             </div>
-            {/* <hr className='border-stone-800 mt-[1vh] rounded-full'/> */}
             <div className='text-center mt-[3vh]'>
                 <h1 className='w-fit inline-block text-2xl hover:cursor-pointer' onClick={(e) => setVideoDropdown(!videoDropdown)}>Videos {videoDropdown ? '⏷' : '⏵'}</h1>
             </div>
@@ -62,13 +84,14 @@ const Media: NextPage = (props: any) => {
                 {imageDropdown &&
                     <div className='flex items-center justify-center cursor-default'>
                         <div className="mt-[1vh] w-[80vw] h-[50vh] rounded-lg bg-stone-800 text-black scrollbar-thin scrollbar-thumb-orange-400 hover:scrollbar-thumb-orange-500 active:scrollbar-thumb-orange-600 scrollbar-thumb-rounded-full scrollbar-track-black scrollbar-track-rounded-full">
-                            <div className=' flex w-[80vw] pl-[2vw] pr-[2vw] pt-[2vw] pb-[2vw]'>
+                            <div className='ml-[1vw] mt-[1vw]'>
+                                {images.map((res) => res)}
                             </div>
                         </div>
                     </div>
                 }
             </div>
-        </div>
+        </div >
     )
 }
 
