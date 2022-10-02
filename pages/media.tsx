@@ -35,7 +35,7 @@ const Media: NextPage = (props: any) => {
             content: <iframe className="border-2 border-neutral-900 rounded-md w-[40vw] h-[50vh]" src="https://www.youtube.com/embed/videoseries?list=TLGGkh3smR9KcOAwMjEwMjAyMg#1%20(Team%207202)" title="FIM District Kettering University Event" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         },
         "Twitch Live": {
-            content: <iframe src="https://player.twitch.tv/?channel=firstupdatesnow&parent=cyberorioles.com" className='border-2 border-neutral-900 rounded-md w-[40vw] h-[50vh]' frameBorder="0" allowFullScreen={true} scrolling="no" height="378" width="620"></iframe>
+            content: <iframe src="https://player.twitch.tv/?channel=firstupdatesnow&parent=www.cyberorioles.com&parent=cyberorioles.com" className='border-2 border-neutral-900 rounded-md w-[40vw] h-[50vh]' frameBorder="0" allowFullScreen={true} scrolling="no" height="378" width="620"></iframe>
         }
     }
 
