@@ -1,11 +1,9 @@
 import type { GetServerSideProps, NextPage } from 'next'
 import { useRef, useState } from 'react';
-import ReactDOM from 'react-dom';
 import { GrFacebookOption, GrGithub } from "react-icons/gr";
 import { TBAIcon } from '../components/images/Icons';
 import ImageFullscreen from '../components/media/ImageFullscreen';
 import { getImages } from '../scripts/getImages';
-import { TwitchPlayer } from "react-twitch-embed";
 
 let images: any[] = [];
 
