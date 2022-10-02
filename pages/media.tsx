@@ -1,20 +1,53 @@
 import type { GetServerSideProps, NextPage } from 'next'
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { GrFacebookOption, GrGithub } from "react-icons/gr";
 import { TBAIcon } from '../components/images/Icons';
 import ImageFullscreen from '../components/media/ImageFullscreen';
 import { getImages } from '../scripts/getImages';
+import { TwitchPlayer } from "react-twitch-embed";
 
 let images: any[] = [];
 
+interface Embed {
+    "Jackson": {
+        content: JSX.Element
+    },
+    "Kettering University #1": {
+        content: JSX.Element
+    },
+    "Twitch Live": {
+        content: JSX.Element
+    }
+}
+
 const Media: NextPage = (props: any) => {
+
+    const embed = useRef();
+
+    const handleReady = (e: any) => {
+        embed.current = e;
+    };
+
+    const videoEmbeds: any = {
+        "Jackson": {
+            content: <iframe className="border-2 border-neutral-900 rounded-md w-[40vw] h-[50vh]" src="https://www.youtube.com/embed/videoseries?list=TLGGZYoYoN9sGD8wMjEwMjAyMg" title="FIM District Jackson Event presented by Spring" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+        },
+        "Kettering University #1": {
+            content: <iframe className="border-2 border-neutral-900 rounded-md w-[40vw] h-[50vh]" src="https://www.youtube.com/embed/videoseries?list=TLGGkh3smR9KcOAwMjEwMjAyMg#1%20(Team%207202)" title="FIM District Kettering University Event" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+        },
+        "Twitch Live": {
+            content: <iframe src="https://player.twitch.tv/?channel=firstupdatesnow&parent=cyberorioles.com" className='border-2 border-neutral-900 rounded-md w-[40vw] h-[50vh]' frameBorder="0" allowFullScreen={true} scrolling="no" height="378" width="620"></iframe>
+        }
+    }
 
     const [socialDropdown, setSocialDropdown] = useState(false);
     const [videoDropdown, setVideoDropdown] = useState(false);
     const [imageDropdown, setImageDropdown] = useState(false);
     const [imageFull, setImageFull] = useState(false);
+    const [eventNav, setEventNav] = useState(false);
 
+    const [currentEvent, setCurrentEvent] = useState("")
     const [fullImageURL, setFullImageURL] = useState("");
 
     if (typeof window !== 'undefined') {
@@ -26,6 +59,11 @@ const Media: NextPage = (props: any) => {
     const handleImageClick = (url: string) => {
         setFullImageURL(url);
         setImageFull(true);
+    }
+
+    const handleEventNavClick = (event: string) => {
+        if (currentEvent != event) setCurrentEvent(event);
+        setEventNav(false);
     }
 
     getImages().then((res) => {
@@ -72,7 +110,19 @@ const Media: NextPage = (props: any) => {
                 {videoDropdown &&
                     <div className='flex items-center justify-center scrollbar-thin scrollbar-thumb-orange-400 hover:scrollbar-thumb-orange-500 active:scrollbar-thumb-orange-600 scrollbar-thumb-rounded-full scrollbar-track-black scrollbar-track-rounded-full cursor-default'>
                         <div className="mt-[1vh] w-[80vw] h-[55vh] rounded-lg bg-stone-800 flex gap-[1vw] items-center justify-center text-black">
-                            <iframe className="border-2 border-neutral-900 rounded-md" width="500" height="300" src="https://www.youtube.com/embed/videoseries?list=PL3tAkk3DkHeiJ-N3gWgfq1f12_vd6Ty8s" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                            {currentEvent == '' ? <iframe className="border-2 border-neutral-900 rounded-md w-[40vw] h-[50vh]" src="https://www.youtube.com/embed/videoseries?list=PL3tAkk3DkHeiJ-N3gWgfq1f12_vd6Ty8s" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> : videoEmbeds[currentEvent].content}
+                            {!eventNav && <span className='absolute pl-[1vw] pt-[1vw] pr-[1vw] pb-[1vw] ml-[60vw] bg-orange-600 rounded-md text-white hover:text-black hover:cursor-pointer' onClick={(e) => setEventNav(true)}>{currentEvent == '' ? "Twitch Live" : currentEvent}</span>}
+                            {eventNav &&
+                                <div className='absolute bg-[rgba(0,0,0,0.5)] pt-[2vw] pb-[2vw] pr-[1vw] pl-[1vw] w-fit ml-[60vw] h-[43.5vh] scrollbar-thin scrollbar-thumb-orange-400 hover:scrollbar-thumb-orange-500 active:scrollbar-thumb-orange-600 scrollbar-thumb-rounded-full scrollbar-track-black scrollbar-track-rounded-full'>
+                                    <ul className='text-center'>
+                                        <li className='pb-[1vw] pt-[1vw] pr-[1vw] pl-[1vw] bg-orange-600 rounded-md hover:text-white hover:bg-purple-600 hover:cursor-pointer' onClick={(e) => handleEventNavClick('Twitch Live')}>Twitch Live</li>
+                                        <div className='h-[1vh]' />
+                                        <li className='pb-[1vw] pt-[1vw] pr-[1vw] pl-[1vw] bg-orange-600 rounded-md hover:text-white hover:bg-black hover:cursor-pointer' onClick={(e) => handleEventNavClick('Jackson')}>Jackson</li>
+                                        <div className='h-[1vh]' />
+                                        <li className='pb-[1vw] pt-[1vw] pr-[1vw] pl-[1vw] bg-orange-600 rounded-md hover:text-white hover:bg-black hover:cursor-pointer' onClick={(e) => handleEventNavClick('Kettering University #1')}>Kettering University #1</li>
+                                    </ul>
+                                </div>
+                            }
                         </div>
                     </div>
                 }
