@@ -113,11 +113,11 @@ const Media: NextPage = (props: any) => {
                             {eventNav &&
                                 <div className='absolute bg-[rgba(0,0,0,0.5)] pt-[2vw] pb-[2vw] pr-[1vw] pl-[1vw] w-fit ml-[60vw] h-[43.5vh] scrollbar-thin scrollbar-thumb-orange-400 hover:scrollbar-thumb-orange-500 active:scrollbar-thumb-orange-600 scrollbar-thumb-rounded-full scrollbar-track-black scrollbar-track-rounded-full'>
                                     <ul className='text-center'>
-                                        <li className='pb-[1vw] pt-[1vw] pr-[1vw] pl-[1vw] bg-orange-600 rounded-md hover:text-white hover:bg-purple-600 hover:cursor-pointer' onClick={(e) => handleEventNavClick('Twitch Live')}>Twitch Live</li>
+                                        <li className='duration-1000 hover:duration-1000 pb-[1vw] pt-[1vw] pr-[1vw] pl-[1vw] bg-orange-600 rounded-md hover:text-white hover:bg-purple-600 hover:cursor-pointer' onClick={(e) => handleEventNavClick('Twitch Live')}>Twitch Live</li>
                                         <div className='h-[1vh]' />
-                                        <li className='pb-[1vw] pt-[1vw] pr-[1vw] pl-[1vw] bg-orange-600 rounded-md hover:text-white hover:bg-black hover:cursor-pointer' onClick={(e) => handleEventNavClick('Jackson')}>Jackson</li>
+                                        <li className='duration-1000 hover:duration-1000 pb-[1vw] pt-[1vw] pr-[1vw] pl-[1vw] bg-orange-600 rounded-md hover:text-white hover:bg-black hover:cursor-pointer' onClick={(e) => handleEventNavClick('Jackson')}>Jackson</li>
                                         <div className='h-[1vh]' />
-                                        <li className='pb-[1vw] pt-[1vw] pr-[1vw] pl-[1vw] bg-orange-600 rounded-md hover:text-white hover:bg-black hover:cursor-pointer' onClick={(e) => handleEventNavClick('Kettering University #1')}>Kettering University #1</li>
+                                        <li className='duration-1000 hover:duration-1000 pb-[1vw] pt-[1vw] pr-[1vw] pl-[1vw] bg-orange-600 rounded-md hover:text-white hover:bg-black hover:cursor-pointer' onClick={(e) => handleEventNavClick('Kettering University #1')}>Kettering University #1</li>
                                     </ul>
                                 </div>
                             }
