@@ -108,7 +108,7 @@ const Media: NextPage = (props: any) => {
                 {videoDropdown &&
                     <div className='flex items-center justify-center scrollbar-thin scrollbar-thumb-orange-400 hover:scrollbar-thumb-orange-500 active:scrollbar-thumb-orange-600 scrollbar-thumb-rounded-full scrollbar-track-black scrollbar-track-rounded-full cursor-default'>
                         <div className="mt-[1vh] w-[80vw] h-[55vh] rounded-lg bg-stone-800 flex gap-[1vw] items-center justify-center text-black">
-                            {currentEvent == '' ? <iframe className="border-2 border-neutral-900 rounded-md w-[40vw] h-[50vh]" src="https://www.youtube.com/embed/videoseries?list=PL3tAkk3DkHeiJ-N3gWgfq1f12_vd6Ty8s" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> : videoEmbeds[currentEvent].content}
+                            {currentEvent == '' ? videoEmbeds["Twitch Live"].content : videoEmbeds[currentEvent].content}
                             {!eventNav && <span className='absolute pl-[1vw] pt-[1vw] pr-[1vw] pb-[1vw] ml-[60vw] bg-orange-600 rounded-md text-white hover:text-black hover:cursor-pointer' onClick={(e) => setEventNav(true)}>{currentEvent == '' ? "Twitch Live" : currentEvent}</span>}
                             {eventNav &&
                                 <div className='absolute bg-[rgba(0,0,0,0.5)] pt-[2vw] pb-[2vw] pr-[1vw] pl-[1vw] w-fit ml-[60vw] h-[43.5vh] scrollbar-thin scrollbar-thumb-orange-400 hover:scrollbar-thumb-orange-500 active:scrollbar-thumb-orange-600 scrollbar-thumb-rounded-full scrollbar-track-black scrollbar-track-rounded-full'>
