@@ -19,7 +19,7 @@ export default function Navbar() {
         <div>
             <div className="select-none">
                 <div className="md:hidden lg:hidden flex items-center duration-1000 hover:duration-1000 w-[95vw] h-[5vh] rounded-md bg-gradient-to-r from-orange-500 to-amber-400 hover:bg-gradient-to-r hover:from-orange-600 hover:to-amber-500 ml-[2.5vw] fixed border-black border-2 text-[2.6vh]">
-                    <GiHamburgerMenu className={`mt-[1vh] ml-[85vw] duration-1000 hover:duration-1000 hover:cursor-pointer ${mobileNavToggle ? "text-white" : "text-black"}`} onClick={(e) => toggleMobileNav(!mobileNavToggle)} />
+                    <GiHamburgerMenu className={`ml-[85vw] duration-1000 hover:duration-1000 hover:cursor-pointer ${mobileNavToggle ? "text-white" : "text-black"}`} onClick={(e) => toggleMobileNav(!mobileNavToggle)} />
                 </div>
                 <div className="sm:hidden duration-1000 hover:duration-1000 w-[95vw] h-[5vh] mt-[1vh] rounded-lg bg-gradient-to-r from-orange-500 to-amber-400 hover:bg-gradient-to-r hover:from-orange-600 hover:to-amber-500 ml-[2.5vw] fixed border-black border-2 text-[3vh]">
                     <span className={`ml-[5vw] ${currentPage == "" ? "text-black font-[900]" : "text-stone-800 font-[600]"} hover:bg-amber-600 pl-[1vw] pr-[1vw] rounded-md hover:cursor-pointer`} onClick={(e) => currentPage == "" ? "" : location.href = "/"}>Home</span>
