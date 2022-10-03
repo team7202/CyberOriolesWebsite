@@ -79,7 +79,7 @@ const Media: NextPage = (props: any) => {
                 show={imageFull}
                 url={fullImageURL}
             />
-            <div className='sm:hidden'>
+            <div className=''>
                 <div className='text-center'>
                     <h1 className='w-fit inline-block text-2xl hover:cursor-pointer' onClick={(e) => setSocialDropdown(!socialDropdown)}>Social Links {socialDropdown ? '⏵' : '⏷'}</h1>
                 </div>
