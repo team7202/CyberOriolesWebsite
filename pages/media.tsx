@@ -5,7 +5,7 @@ import { TBAIcon } from '../components/images/Icons';
 import ImageFullscreen from '../components/media/ImageFullscreen';
 import { getImages } from '../scripts/getImages';
 
-let images: any[] = [];
+let imageArray: any[] = [];
 
 interface Embed {
     "Jackson": {
@@ -39,6 +39,10 @@ const Media: NextPage = (props: any) => {
         }
     }
 
+    const {
+        images
+    } = props;
+
     const [socialDropdown, setSocialDropdown] = useState(false);
     const [videoDropdown, setVideoDropdown] = useState(false);
     const [imageDropdown, setImageDropdown] = useState(false);
@@ -64,12 +68,10 @@ const Media: NextPage = (props: any) => {
         setEventNav(false);
     }
 
-    getImages().then((res) => {
-        for (let i = 0; i < res.length; i++) {
-            images = [];
-            images.push(res.map((val: any) => <div key={i} className='duration-1000 hover:duration-1000 float-left pl-[0.5vw] pt-[0.5vw] pr-[0.5vw] pb-[0.5vw] ml-[0.5vw] mt-[0.5vw] rounded-lg bg-stone-900 hover:bg-black' onClick={(e) => handleImageClick(`/images/${val}`)}><img src={`/images/${val}`} className={`w-[10vw] h-[10vw]`} /></div>))
-        }
-    });
+    for (let i = 0; i < images.length; i++) {
+        imageArray = [];
+        imageArray.push(images.map((val: any) => <div key={i} className='duration-1000 hover:duration-1000 float-left pl-[0.5vw] pt-[0.5vw] pr-[0.5vw] pb-[0.5vw] ml-[0.5vw] mt-[0.5vw] rounded-lg bg-stone-900 hover:bg-black' onClick={(e) => handleImageClick(`/images/${val}`)}><img src={`/images/${val}`} className={`w-[10vw] h-[10vw]`} /></div>))
+    }
 
 
     return (
@@ -133,7 +135,7 @@ const Media: NextPage = (props: any) => {
                     <div className='flex items-center justify-center cursor-default'>
                         <div className="mt-[1vh] w-[80vw] h-[50vh] rounded-lg bg-stone-800 text-black scrollbar-thin scrollbar-thumb-orange-400 hover:scrollbar-thumb-orange-500 active:scrollbar-thumb-orange-600 scrollbar-thumb-rounded-full scrollbar-track-black scrollbar-track-rounded-full">
                             <div className='ml-[1vw] mt-[1vw]'>
-                                {images.map((res) => res)}
+                                {imageArray.map((res) => res)}
                             </div>
                         </div>
                     </div>
@@ -142,5 +144,26 @@ const Media: NextPage = (props: any) => {
         </div >
     )
 }
+
+export const getServerSideProps: GetServerSideProps = async (context: any) => {
+    const images = await getImages();
+    return {
+        props: { images }, // will be passed to the page component as props
+    }
+}
+
+// const ClientOnly = ({ children, ...delegated }: { children: any }) => {
+//     const [hasMounted, setHasMounted] = useState(false);
+
+//     useEffect(() => {
+//         setHasMounted(true);
+//     }, []);
+
+//     if (!hasMounted) {
+//         return null;
+//     }
+
+//     return <div {...delegated}>{children}</div>;
+// };
 
 export default Media;
