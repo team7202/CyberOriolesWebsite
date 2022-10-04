@@ -2,7 +2,9 @@ import type { NextPage } from 'next'
 
 const Sponsors: NextPage = (props: any) => {
     return (
-      <div></div>
+      <div className="w-max h-max flex items-center justify-center">
+        <span className="w-fit">Coming Soon</span> 
+      </div>
     )
 }
 
