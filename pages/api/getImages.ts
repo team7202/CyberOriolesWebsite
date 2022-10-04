@@ -10,11 +10,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     res.setHeader('Access-Control-Allow-Origin', '*');
 
     const { serverRuntimeConfig } = getConfig();
-    const dir = path.join(serverRuntimeConfig.PROJECT_ROOT, './public', "images");
+    let dir;
+    if(!Constants.SERVER.PUBLIC) dir = path.join(process.cwd(), './public', "images");
+    else dir = path.join(process.cwd(), "images");
     
     const data = [];
     const images = fs.readdirSync(dir);
-    
     for(const image of images) {
         data.push(image);
     }
