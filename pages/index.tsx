@@ -26,7 +26,7 @@ const Home: NextPage = (props) => {
                     What is FRC?
                   </summary>
                   <div className='pt-[0.5vh] pb-[0.5vh] pr-[0.5vw] pl-[0.5vw] rounded-md cursor'>
-                    <span className='text-neutral-500'>FRC is a robotics competition where a team has to spend a specific amount of time building/programming their robot to do things for the competition</span>
+                    <span className='text-neutral-500'>FRC is a robotics competition where a team between the grades of 9 and 12 have to spend a specific amount of time building/programming their robot to do things for the competition</span>
                   </div>
                 </details>
                 <details className='mt-[1vh]'>
@@ -79,7 +79,7 @@ const Home: NextPage = (props) => {
                     What is FRC?
                   </summary>
                   <div className='pt-[0.5vh] pb-[0.5vh] pr-[0.5vw] pl-[0.5vw] rounded-md cursor'>
-                    <span className='text-neutral-500'>FRC is a robotics competition where a team has to spend a specific amount of time building/programming their robot to do things for the competition</span>
+                    <span className='text-neutral-500'>FRC is a robotics competition where a team between the grades of 9 and 12 have to spend a specific amount of time building/programming their robot to do things for the competition</span>
                   </div>
                 </details>
                 <details className='mt-[1vh]'>
