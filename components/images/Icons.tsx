@@ -3,7 +3,7 @@ import { GenIcon, IconType } from "react-icons";
 export function TBAIcon(props: any) {
 
 	return (
-		<svg xmlns="http://www.w3.org/2000/svg" className={`${props.className}`} xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width={"1em"} height={"1em"} viewBox="0 0 72 112" enable-background="new 0 0 72 112" xmlSpace="preserve" onClick={props.onClick}>
+		<svg xmlns="http://www.w3.org/2000/svg" className={`${props.className}`} xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width={"1em"} height={"1em"} viewBox="0 0 72 112" enableBackground="new 0 0 72 112" xmlSpace="preserve" onClick={props.onClick}>
 			<svg>
 				<g>
 					<g>
