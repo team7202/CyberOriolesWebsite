@@ -10,7 +10,7 @@ const Contact: NextPage = (props: any) => {
           <div className='flex flex-col gap-[1vh] justify-center items-center h-[70%]'>
             <span className='flex'>
               <span className='border-r rounded-sm pr-[1vw] mr-[1vw]'>Name</span>
-              <span>Kari Brown</span>
+              <span>Kari</span>
             </span>
             <span className='flex'>
               <span className='border-r rounded-sm pr-[1vw] mr-[1vw]'>Email</span>
