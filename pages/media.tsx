@@ -21,21 +21,18 @@ interface Embed {
 
 const Media: NextPage = (props: any) => {
 
-    const embed = useRef();
-
-    const handleReady = (e: any) => {
-        embed.current = e;
-    };
-
     const videoEmbeds: any = {
         "Jackson": {
-            content: <iframe className="border-2 border-neutral-900 rounded-md w-[40vw] h-[50vh]" src="https://www.youtube.com/embed/videoseries?list=TLGGZYoYoN9sGD8wMjEwMjAyMg" title="FIM District Jackson Event presented by Spring" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+            small: <iframe src="https://www.youtube.com/embed/videoseries?list=TLGGZYoYoN9sGD8wMjEwMjAyMg" className="border-2 border-neutral-900 rounded-md w-[60vw] h-[60vw]" title="FIM District Jackson Event presented by Spring" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>,
+            normal: <iframe src="https://www.youtube.com/embed/videoseries?list=TLGGZYoYoN9sGD8wMjEwMjAyMg" className="border-2 border-neutral-900 rounded-md w-[40vw] h-[50vh]" title="FIM District Jackson Event presented by Spring" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         },
         "Kettering University #1": {
-            content: <iframe className="border-2 border-neutral-900 rounded-md w-[40vw] h-[50vh]" src="https://www.youtube.com/embed/videoseries?list=TLGGkh3smR9KcOAwMjEwMjAyMg#1%20(Team%207202)" title="FIM District Kettering University Event" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+            small: <iframe src="https://www.youtube.com/embed/videoseries?list=TLGGkh3smR9KcOAwMjEwMjAyMg#1%20(Team%207202)" className="border-2 border-neutral-900 rounded-md w-[60vw] h-[60vw]" title="FIM District Kettering University Event" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>,
+            normal: <iframe src="https://www.youtube.com/embed/videoseries?list=TLGGkh3smR9KcOAwMjEwMjAyMg#1%20(Team%207202)" className="border-2 border-neutral-900 rounded-md w-[40vw] h-[50vh]" title="FIM District Kettering University Event" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         },
         "Twitch Live": {
-            content: <iframe src="https://player.twitch.tv/?channel=firstupdatesnow&parent=www.cyberorioles.com&parent=cyberorioles.com&muted=false" className='border-2 border-neutral-900 rounded-md w-[40vw] h-[50vh]' frameBorder="0" allowFullScreen={true} scrolling="no" height="378" width="620"></iframe>
+            small: <iframe src="https://player.twitch.tv/?channel=firstupdatesnow&parent=www.cyberorioles.com&parent=cyberorioles.com&muted=false" className='border-2 border-neutral-900 rounded-md w-[60vw] h-[60vw]' frameBorder="0" allowFullScreen={true} scrolling="no" height="378" width="620"></iframe>,
+            normal: <iframe src="https://player.twitch.tv/?channel=firstupdatesnow&parent=www.cyberorioles.com&parent=cyberorioles.com&muted=false" className='border-2 border-neutral-900 rounded-md w-[40vw] h-[50vh]' frameBorder="0" allowFullScreen={true} scrolling="no" height="378" width="620"></iframe>
         }
     }
 
@@ -67,12 +64,18 @@ const Media: NextPage = (props: any) => {
         if (currentEvent != event) setCurrentEvent(event);
         setEventNav(false);
     }
+    // <div key={i} className='duration-1000 hover:duration-1000 float-left pl-[0.5vw] pt-[0.5vw] pr-[0.5vw] pb-[0.5vw] ml-[0.5vw] mt-[0.5vw] rounded-lg bg-stone-900 hover:bg-black' onClick={(e) => handleImageClick(`/images/${val}`)}><img src={`/images/${val}`} className={`w-[10vw] h-[10vw]`} /></div>))
 
     for (let i = 0; i < images.length; i++) {
         imageArray = [];
-        imageArray.push(images.map((val: any) => <div key={i} className='duration-1000 hover:duration-1000 float-left pl-[0.5vw] pt-[0.5vw] pr-[0.5vw] pb-[0.5vw] ml-[0.5vw] mt-[0.5vw] rounded-lg bg-stone-900 hover:bg-black' onClick={(e) => handleImageClick(`/images/${val}`)}><img src={`/images/${val}`} className={`w-[10vw] h-[10vw]`} /></div>))
+        images.map((val: any) => {
+            imageArray.push(
+                {
+                    small: <div key={i} className='duration-1000 hover:duration-1000 float-left pl-[0.5vh] pt-[0.5vh] pr-[0.5vh] pb-[0.5vh] ml-[0.5vh] mt-[0.5vh] rounded-lg bg-stone-900 hover:bg-black' onClick={(e) => handleImageClick(`/images/${val}`)}><img src={`/images/${val}`} className={`w-[10vh] h-[10vh]`} /></div>,
+                    normal: <div key={i} className='duration-1000 hover:duration-1000 float-left pl-[0.5vw] pt-[0.5vw] pr-[0.5vw] pb-[0.5vw] ml-[0.5vw] mt-[0.5vw] rounded-lg bg-stone-900 hover:bg-black' onClick={(e) => handleImageClick(`/images/${val}`)}><img src={`/images/${val}`} className={`w-[10vw] h-[10vw]`} /></div>
+                })
+        })
     }
-
 
     return (
         <div className='text-stone-300 select-none'>
@@ -108,21 +111,44 @@ const Media: NextPage = (props: any) => {
             </div>
             <div>
                 {videoDropdown &&
-                    <div className='flex items-center justify-center scrollbar-thin scrollbar-thumb-orange-400 hover:scrollbar-thumb-orange-500 active:scrollbar-thumb-orange-600 scrollbar-thumb-rounded-full scrollbar-track-black scrollbar-track-rounded-full cursor-default'>
-                        <div className="mt-[1vh] w-[80vw] h-[55vh] rounded-lg bg-stone-800 flex gap-[1vw] items-center justify-center text-black">
-                            {currentEvent == '' ? videoEmbeds["Twitch Live"].content : videoEmbeds[currentEvent].content}
-                            {!eventNav && <span className='absolute pl-[1vw] pt-[1vw] pr-[1vw] pb-[1vw] ml-[60vw] bg-orange-600 rounded-md text-white hover:text-black hover:cursor-pointer' onClick={(e) => setEventNav(true)}>{currentEvent == '' ? "Twitch Live" : currentEvent}</span>}
+                    <div>
+                        {/** Medium-Large Screen */}
+                        <div className='sm:hidden flex items-center justify-center scrollbar-thin scrollbar-thumb-orange-400 hover:scrollbar-thumb-orange-500 active:scrollbar-thumb-orange-600 scrollbar-thumb-rounded-full scrollbar-track-black scrollbar-track-rounded-full cursor-default'>
+                            <div className="mt-[1vh] w-[80vw] h-[55vh] rounded-lg bg-stone-800 flex gap-[1vw] items-center justify-center text-black">
+                                {currentEvent == '' ? videoEmbeds["Twitch Live"].normal : videoEmbeds[currentEvent].normal}
+                                {!eventNav && <span className='absolute pl-[1vw] pt-[1vw] pr-[1vw] pb-[1vw] ml-[60vw] bg-orange-600 rounded-md text-white hover:text-black hover:cursor-pointer' onClick={(e) => setEventNav(true)}>{currentEvent == '' ? "Twitch Live" : currentEvent}</span>}
+                                {eventNav &&
+                                    <div className='absolute bg-[rgba(0,0,0,0.5)] pt-[2vw] pb-[2vw] pr-[1vw] pl-[1vw] w-fit ml-[60vw] h-[43.5vh] scrollbar-thin scrollbar-thumb-orange-400 hover:scrollbar-thumb-orange-500 active:scrollbar-thumb-orange-600 scrollbar-thumb-rounded-full scrollbar-track-black scrollbar-track-rounded-full'>
+                                        <ul className='text-center'>
+                                            <li className='duration-1000 hover:duration-1000 pb-[1vw] pt-[1vw] pr-[1vw] pl-[1vw] bg-orange-600 rounded-md hover:text-white hover:bg-purple-600 hover:cursor-pointer' onClick={(e) => handleEventNavClick('Twitch Live')}>Twitch Live</li>
+                                            <div className='h-[1vh]' />
+                                            <li className='duration-1000 hover:duration-1000 pb-[1vw] pt-[1vw] pr-[1vw] pl-[1vw] bg-orange-600 rounded-md hover:text-white hover:bg-black hover:cursor-pointer' onClick={(e) => handleEventNavClick('Jackson')}>Jackson</li>
+                                            <div className='h-[1vh]' />
+                                            <li className='duration-1000 hover:duration-1000 pb-[1vw] pt-[1vw] pr-[1vw] pl-[1vw] bg-orange-600 rounded-md hover:text-white hover:bg-black hover:cursor-pointer' onClick={(e) => handleEventNavClick('Kettering University #1')}>Kettering University #1</li>
+                                        </ul>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                        {/* Small Screens */}
+                        <div className='md:hidden lg:hidden flex justify-center scrollbar-thin scrollbar-thumb-orange-400 hover:scrollbar-thumb-orange-500 active:scrollbar-thumb-orange-600 scrollbar-thumb-rounded-full scrollbar-track-black scrollbar-track-rounded-full cursor-default'>
+                            {!eventNav && <span className='absolute mt-[1.5vh] pl-[1vw] pt-[1vh] pr-[1vw] pb-[1vh] bg-orange-600 rounded-md text-white hover:text-black hover:cursor-pointer' onClick={(e) => setEventNav(true)}>{currentEvent == '' ? "Twitch Live" : currentEvent}</span>}
                             {eventNav &&
-                                <div className='absolute bg-[rgba(0,0,0,0.5)] pt-[2vw] pb-[2vw] pr-[1vw] pl-[1vw] w-fit ml-[60vw] h-[43.5vh] scrollbar-thin scrollbar-thumb-orange-400 hover:scrollbar-thumb-orange-500 active:scrollbar-thumb-orange-600 scrollbar-thumb-rounded-full scrollbar-track-black scrollbar-track-rounded-full'>
-                                    <ul className='text-center'>
-                                        <li className='duration-1000 hover:duration-1000 pb-[1vw] pt-[1vw] pr-[1vw] pl-[1vw] bg-orange-600 rounded-md hover:text-white hover:bg-purple-600 hover:cursor-pointer' onClick={(e) => handleEventNavClick('Twitch Live')}>Twitch Live</li>
+                                <div className='absolute bg-[rgba(0,0,0,0.5)] pt-[2vw] pb-[2vw] pr-[1vw] pl-[1vw] w-[80vw] h-[43.5vh] scrollbar-thin scrollbar-thumb-orange-400 hover:scrollbar-thumb-orange-500 active:scrollbar-thumb-orange-600 scrollbar-thumb-rounded-full scrollbar-track-black scrollbar-track-rounded-full'>
+                                    <ul className='flex flex-col  text-center'>
+                                        <li className='duration-1000 hover:duration-1000 pb-[1vh] pt-[1vh] pr-[1vw] pl-[1vw] bg-orange-600 rounded-md hover:text-white hover:bg-purple-600 hover:cursor-pointer' onClick={(e) => handleEventNavClick('Twitch Live')}>Twitch Live</li>
+                                        <div className='inline-block h-[1vh]' />
+                                        <li className='duration-1000 hover:duration-1000 pb-[1vh] pt-[1vh] pr-[1vw] pl-[1vw] bg-orange-600 rounded-md hover:text-white hover:bg-black hover:cursor-pointer' onClick={(e) => handleEventNavClick('Jackson')}>Jackson</li>
                                         <div className='h-[1vh]' />
-                                        <li className='duration-1000 hover:duration-1000 pb-[1vw] pt-[1vw] pr-[1vw] pl-[1vw] bg-orange-600 rounded-md hover:text-white hover:bg-black hover:cursor-pointer' onClick={(e) => handleEventNavClick('Jackson')}>Jackson</li>
-                                        <div className='h-[1vh]' />
-                                        <li className='duration-1000 hover:duration-1000 pb-[1vw] pt-[1vw] pr-[1vw] pl-[1vw] bg-orange-600 rounded-md hover:text-white hover:bg-black hover:cursor-pointer' onClick={(e) => handleEventNavClick('Kettering University #1')}>Kettering University #1</li>
+                                        <li className='duration-1000 hover:duration-1000 pb-[1vh] pt-[1vh] pr-[1vw] pl-[1vw] bg-orange-600 rounded-md hover:text-white hover:bg-black hover:cursor-pointer' onClick={(e) => handleEventNavClick('Kettering University #1')}>Kettering University #1</li>
                                     </ul>
                                 </div>
                             }
+                            <div className="mt-[1vh] w-[80vw] h-[80vw] rounded-lg bg-stone-800 flex gap-[1vw] items-center justify-center text-black">
+                                <div>
+                                    {currentEvent == '' ? videoEmbeds["Twitch Live"].small : videoEmbeds[currentEvent].small}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 }
@@ -132,10 +158,21 @@ const Media: NextPage = (props: any) => {
             </div>
             <div>
                 {imageDropdown &&
-                    <div className='flex items-center justify-center cursor-default'>
-                        <div className="mt-[1vh] w-[80vw] h-[50vh] rounded-lg bg-stone-800 text-black scrollbar-thin scrollbar-thumb-orange-400 hover:scrollbar-thumb-orange-500 active:scrollbar-thumb-orange-600 scrollbar-thumb-rounded-full scrollbar-track-black scrollbar-track-rounded-full">
-                            <div className='ml-[1vw] mt-[1vw]'>
-                                {imageArray.map((res) => res)}
+                    <div>
+                        {/* Medium-Large Screens */}
+                        <div className='sm:hidden flex items-center justify-center cursor-default'>
+                            <div className="mt-[1vh] w-[80vw] h-[50vh] rounded-lg bg-stone-800 text-black scrollbar-thin scrollbar-thumb-orange-400 hover:scrollbar-thumb-orange-500 active:scrollbar-thumb-orange-600 scrollbar-thumb-rounded-full scrollbar-track-black scrollbar-track-rounded-full">
+                                <div className='ml-[1vw] mt-[1vw]'>
+                                    {imageArray.map((res) => res["normal"])}
+                                </div>
+                            </div>
+                        </div>
+                        {/* Small Screens */}
+                        <div className='md:hidden lg:hidden flex items-center justify-center cursor-default'>
+                            <div className="mt-[1vh] w-[80vw] h-[50vh] rounded-lg bg-stone-800 text-black scrollbar-thin scrollbar-thumb-orange-400 hover:scrollbar-thumb-orange-500 active:scrollbar-thumb-orange-600 scrollbar-thumb-rounded-full scrollbar-track-black scrollbar-track-rounded-full">
+                                <div className='ml-[1vw] mt-[1vw]'>
+                                    {imageArray.map((res) => res.small)}
+                                </div>
                             </div>
                         </div>
                     </div>
