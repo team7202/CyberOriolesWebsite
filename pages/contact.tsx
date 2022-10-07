@@ -3,15 +3,10 @@ import type { NextPage } from 'next'
 const Contact: NextPage = (props: any) => {
   return (
     <div className='flex flex-col h-[85%] gap-[1vh] items-center justify-center'>
-      {/* Coach Cards */}
-      <div className='flex justify-center'>
-        <div className='duration-500 hover:duration-500 w-[30vw] h-[30vh] bg-neutral-800 text-white hover:bg-orange-600 hover:text-black hover:drop-shadow-lg rounded-lg'>
-          <span className='flex justify-center text-2xl border-b border-b-stone-900 rounded-md'>Coach</span>
+      <div className='flex'>
+        <div className='duration-500 hover:duration-500 w-[25vw] h-[25vh] bg-neutral-800 text-white hover:bg-orange-600 hover:text-black hover:drop-shadow-lg rounded-lg'>
+          <span className='flex justify-center text-2xl border-b border-b-stone-900 rounded-md'>Coach Kari</span>
           <div className='flex flex-col gap-[1vh] justify-center items-center h-[70%]'>
-            <span className='flex'>
-              <span className='border-r rounded-sm pr-[1vw] mr-[1vw]'>Name</span>
-              <span>Kari</span>
-            </span>
             <span className='flex'>
               <span className='border-r rounded-sm pr-[1vw] mr-[1vw]'>Email</span>
               <span>To Be Announced</span>
@@ -24,15 +19,10 @@ const Contact: NextPage = (props: any) => {
         </div>
       </div>
 
-      {/* Mentor Cards */}
       <div className='flex justify-center gap-[1vw]'>
-        <div className='duration-500 hover:duration-500 w-[30vw] h-[30vh] bg-neutral-800 text-white hover:bg-orange-600 hover:text-black rounded-lg'>
-          <span className='flex justify-center text-2xl border-b border-b-stone-900 rounded-md'>Mentor</span>
+        <div className='duration-500 hover:duration-500 w-[25vw] h-[25vh] bg-neutral-800 text-white hover:bg-orange-600 hover:text-black rounded-lg'>
+          <span className='flex justify-center text-2xl border-b border-b-stone-900 rounded-md'>Mentor Aiden</span>
           <div className='flex flex-col gap-[1vh] justify-center items-center h-[70%]'>
-            <span className='flex'>
-              <span className='border-r rounded-sm pr-[1vw] mr-[1vw]'>Name</span>
-              <span>Matt</span>
-            </span>
             <span className='flex'>
               <span className='border-r rounded-sm pr-[1vw] mr-[1vw]'>Email</span>
               <span>To Be Announced</span>
@@ -44,13 +34,9 @@ const Contact: NextPage = (props: any) => {
           </div>
         </div>
 
-        <div className='duration-500 hover:duration-500 w-[30vw] h-[30vh] bg-neutral-800 text-white hover:bg-orange-600 hover:text-black rounded-lg'>
-          <span className='flex justify-center text-2xl border-b border-b-stone-900 rounded-md'>Mentor</span>
+        <div className='duration-500 hover:duration-500 w-[25vw] h-[25vh] bg-neutral-800 text-white hover:bg-orange-600 hover:text-black rounded-lg'>
+          <span className='flex justify-center text-2xl border-b border-b-stone-900 rounded-md'>Mentor Matt</span>
           <div className='flex flex-col gap-[1vh] justify-center items-center h-[70%]'>
-            <span className='flex'>
-              <span className='border-r rounded-sm pr-[1vw] mr-[1vw]'>Name</span>
-              <span>Aiden</span>
-            </span>
             <span className='flex'>
               <span className='border-r rounded-sm pr-[1vw] mr-[1vw]'>Email</span>
               <span>To Be Announced</span>
@@ -63,7 +49,7 @@ const Contact: NextPage = (props: any) => {
         </div>
       </div>
       <div className='flex justify-center gap-[1vw]'>
-        <div className='duration-500 hover:duration-500 w-[30vw] h-[30vh] bg-neutral-800 text-white hover:bg-orange-600 hover:text-black rounded-lg'>
+        <div className='duration-500 hover:duration-500 w-[25vw] h-[25vh] bg-neutral-800 text-white hover:bg-orange-600 hover:text-black rounded-lg'>
           <span className='flex justify-center text-2xl border-b border-b-stone-900 rounded-md'>Team</span>
           <div className='flex flex-col gap-[1vh] justify-center items-center h-[70%]'>
             <span className='flex'>
