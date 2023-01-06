@@ -4,7 +4,7 @@ export default function Home(props: any) {
     return (
         <>
             <Head>
-                <title>CyberOrioles | Meida</title>
+                <title>CyberOrioles | Media</title>
                 <meta name="description" content="Official Announcements from the 7202 CyberOrioles" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
