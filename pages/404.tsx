@@ -16,7 +16,7 @@ export default function FourOhFour() {
             <div className="bg-[rgba(234,88,12,0.9)] w-[calc(25vw+25vh)] h-[calc(15vw+15vh)] rounded-lg flex flex-col justify-center items-center gap-5 border-[calc(0.15vw+0.15vh)] border-black">
                 <h1 className="text-red-600 text-[calc(2.5vw+2.5vh)] text-center">Error 404!</h1>
                 <p className="text-black sm:text-[4vmin] text-center lg:text-lg">Looks like we couldn&apos;t find this page :(</p>
-                <Link href={"/"} className="bg-black pl-[calc(0.5vw+0.5vh)] pt-[calc(0.5vw+0.5vh)] pr-[calc(0.5vw+0.5vh)] pb-[calc(0.5vw+0.5vh)] sm:mt-[calc(0.75vw+0.75vh)] lg:mt-[calc(1.5vw+1.5vh)] rounded-md">Home</Link>
+                <Link href={"/"} className="bg-black pl-[calc(0.5vw+0.5vh)] pt-[calc(0.5vw+0.5vh)] pr-[calc(0.5vw+0.5vh)] pb-[calc(0.5vw+0.5vh)] sm:mt-[calc(0.5vw+0.5vh)] lg:mt-[calc(1.5vw+1.5vh)] rounded-md sm:w-[15vmin] lg:w-[2.5vw] sm:h-[h-[10vmin]] lg:h-[2vh]">Home</Link>
             </div>
         </main>
     )
