@@ -29,7 +29,7 @@ export default function Home(props: any) {
 
 
 export async function getServerSideProps() {
-  const announcements = await fetch("http://localhost:3000/api/announcements");
+  const announcements = await fetch("https://www.cyberorioles.com/api/announcements");
   const announcementData = await announcements.json();
   return {
     props: {
