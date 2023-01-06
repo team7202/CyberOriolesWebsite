@@ -2,112 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes float {
-	0% {
-		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
-		transform: translatey(0px);
-	}
-	50% {
-		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
-		transform: translatey(-1px);
-	}
-	100% {
-		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
-		transform: translatey(0px);
-	}
-}
-
+/* libre-franklin-500 - latin */
 @font-face {
-    font-family: poppins;
-    src: url("../public/font/Poppins-Regular.ttf");
-}
-
-@font-face {
-    font-family: poppins-black;
-    src: url("../public/font/Poppins-Black.ttf");
-}
-
-@font-face {
-    font-family: poppins-black-italic;
-    src: url("../public/font/Poppins-BlackItalic.ttf");
-}
-
-@font-face {
-    font-family: poppins-bold;
-    src: url("../public/font/Poppins-Bold.ttf");
-}
-
-@font-face {
-    font-family: poppins-bold-italic;
-    src: url("../public/font/Poppins-BoldItalic.ttf");
-}
-
-@font-face {
-    font-family: poppins-extrabold;
-    src: url("../public/font/Poppins-ExtraBold.ttf");
-}
-
-@font-face {
-    font-family: poppins-extrabold-italic;
-    src: url("../public/font/Poppins-ExtraBoldItalic.ttf");
-}
-
-@font-face {
-    font-family: poppins-extralight;
-    src: url("../public/font/Poppins-ExtraLight.ttf");
-}
-
-@font-face {
-    font-family: poppins-extralight-italic;
-    src: url("../public/font/Poppins-ExtraLightItalic.ttf");
-}
-
-@font-face {
-    font-family: poppins-italic;
-    src: url("../public/font/Poppins-Italic.ttf");
-}
-
-@font-face {
-    font-family: poppins-light;
-    src: url("../public/font/Poppins-Light.ttf");
-}
-
-@font-face {
-    font-family: poppins-light-italic;
-    src: url("../public/font/Poppins-LightItalic.ttf");
-}
-
-@font-face {
-    font-family: poppins-medium;
-    src: url("../public/font/Poppins-Medium.ttf");
-}
-
-@font-face {
-    font-family: poppins-medium-italic;
-    src: url("../public/font/Poppins-MediumItalic.ttf");
-}
-
-@font-face {
-    font-family: poppins-semibold;
-    src: url("../public/font/Poppins-SemiBold.ttf");
-}
-
-@font-face {
-    font-family: poppins-semibold-italic;
-    src: url("../public/font/Poppins-SemiBoldItalic.ttf");
-}
-
-@font-face {
-    font-family: poppins-thin;
-    src: url("../public/font/Poppins-Thin.ttf");
-}
-
-@font-face {
-    font-family: poppins-thin-italic;
-    src: url("../public/font/Poppins-ThinItalic.ttf");
-}
-
-@font-face {
-    font-family: varsity;
-    src: url("../public/font/Varsity_Regular.ttf");
+  font-family: 'Libre Franklin';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/libre-franklin-v13-latin-500.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('/fonts/libre-franklin-v13-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/fonts/libre-franklin-v13-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/fonts/libre-franklin-v13-latin-500.woff') format('woff'), /* Modern Browsers */
+       url('/fonts/libre-franklin-v13-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/fonts/libre-franklin-v13-latin-500.svg#LibreFranklin') format('svg'); /* Legacy iOS */
 }
