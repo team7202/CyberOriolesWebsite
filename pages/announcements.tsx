@@ -14,9 +14,9 @@ export default function Home(props: any) {
           {props.announcements.sort(function (a: any, b: any) { return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime() }).map((announcement: any, index: number) => {
             return (
               <div key={index}>
-                <details className='ml-[1vmin] mt-[1vmin]'>
+                <details className='ml-[1vmin] mt-[1vmin] sm:text-[2.5vmin]'>
                   <summary className='cursor-pointer'>{announcement.title}</summary>
-                  <p>{announcement.description}</p>
+                  <p className='ml-[2.5vmin]'>{announcement.description}</p>
                 </details>
               </div>
             )
