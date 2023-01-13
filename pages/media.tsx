@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-export default function Home(props: any) {
+export default function Page(props: any) {
     return (
         <>
             <Head>

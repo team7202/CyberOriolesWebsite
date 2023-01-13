@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-export default function Home(props: any) {
+export default function Page(props: any) {
   return (
     <>
       <Head>
@@ -15,8 +15,8 @@ export default function Home(props: any) {
             return (
               <div key={index}>
                 <details className='ml-[1vmin] mt-[1vmin] sm:text-[2.5vmin]'>
-                  <summary className='cursor-pointer'>{announcement.title}</summary>
-                  <p className='ml-[2.5vmin]'>{announcement.description}</p>
+                  <summary className='cursor-pointer text-orange-600 underline select-none w-fit'>{announcement.title}</summary>
+                  <p className='ml-[2.5vmin] text-orange-500'>{announcement.description}</p>
                 </details>
               </div>
             )

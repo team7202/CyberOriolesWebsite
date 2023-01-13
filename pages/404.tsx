@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function FourOhFour() {
+export default function Page() {
     
     if(typeof window !== 'undefined') {
         document.addEventListener("mousemove", (event) => {
